@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+ "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html  xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets">
+		<ui:composition template="/pages/layout/masterLayout.xhtml">
+		<ui:define name="conteudo">
+			<h:form>
+		
+			<h:panelGrid>
+                            <h:outputText class="title" style="font-size: medium" value="Multiplicacao de 2 numeros"/>
+                            <br/>
+				<h:outputText value="Digite o primeiro numero" />
+                                <h:inputText value="#{calcBean.avalue}" id="valorA" required="true" requiredMessage="Insira o valor 1"/>
+				<br/>
+				<h:outputText value="Digite o segundo numero " />
+                                <h:inputText value="#{calcBean.bvalue}" id="valorB" required="true" requiredMessage="Insira o valor 2"/>
+				<br/>
+				<h:panelGroup>
+                                    <h:outputText value="Multiplicacao: " />
+                                    <h:outputText value="#{calcBean.result}" />
+				</h:panelGroup>
+                                
+                                <h:commandButton action="#{calcBean.multiplicar}" value="multiplicar" />
+                                <h:messages styleClass="errorMessage" />
+                                
+				
+			</h:panelGrid>
+                                	
+		</h:form>
+                    
+                    
+		</ui:define>
+	</ui:composition>
+		
+</html> 

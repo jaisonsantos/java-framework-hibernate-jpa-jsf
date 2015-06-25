@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title><h:outputText value="Curso de JSF" />&nbsp;</title>
+<link
+	href="#{facesContext.externalContext.request.contextPath}/css/aula.css"
+	rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<h:panelGrid columns="1" width="100%">
+
+		<ui:insert name="topo">
+			<h:panelGroup>
+				<ui:include src="topo.xhtml">
+					<ui:param name="titulo" value="Trabalho JSF Jaison Santos" />
+				</ui:include>
+			</h:panelGroup>
+		</ui:insert>
+		<h:panelGroup>
+			<h:panelGrid columns="2" columnClasses="menu,conteudo">
+				<h:panelGroup>
+					<ui:insert name="menu">
+						<ui:include src="menu.xhtml" />
+					</ui:insert>
+				</h:panelGroup>
+
+				<h:panelGroup>
+					<ui:insert name="conteudo" />
+				</h:panelGroup>
+			</h:panelGrid>
+		</h:panelGroup>
+		<ui:insert name="rodape">
+			<ui:include src="rodape.xhtml" />
+		</ui:insert>
+	</h:panelGrid>
+</body>
+</html>

@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config
+    xmlns="http://java.sun.com/xml/ns/javaee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+    version="2.0">
+
+	<converter>
+		<converter-id>numeroConverter</converter-id>
+		<converter-class>converter.aula2.NumeroConverter</converter-class>
+	</converter>
+	
+	 <managed-bean>
+    	<managed-bean-name>papelUsuarioBean</managed-bean-name>
+    	<managed-bean-class>mbean.aula3.PapelUsuarioBean</managed-bean-class>
+    	<managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    <!-- 
+    <application> 
+		 <locale-config>
+			<default-locale>pt</default-locale>
+			<supported-locale>pt</supported-locale>
+			<supported-locale>en</supported-locale>
+		</locale-config> 
+		<message-bundle>aula3.messages</message-bundle>
+    	<resource-bundle>
+    		<base-name>
+    			aula3.messages
+    		</base-name>
+    		<var>msg</var>
+    	</resource-bundle>
+	</application>   -->
+
+	<navigation-rule>
+		<from-view-id>/pages/aula4/navegacao.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>HELLO</from-outcome>
+			<to-view-id>/pages/aula1/nome.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>SORTE</from-outcome>
+			<to-view-id>/pages/aula1/sorte.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>CALCULADORA</from-outcome>
+			<to-view-id>/pages/aula1/calcPanel.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>PESSOA</from-outcome>
+			<to-view-id>/pages/aula1/pessoa.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>	
+	
+	<navigation-rule>
+		<from-view-id>/pages/aula4/emprestimo1.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>proximo</from-outcome>
+			<to-view-id>/pages/aula4/emprestimo2.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/pages/aula4/emprestimo2.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>proximo</from-outcome>
+			<to-view-id>/pages/aula4/emprestimo3.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>anterior</from-outcome>
+			<to-view-id>/pages/aula4/emprestimo1.xhtml</to-view-id>
+		</navigation-case>	
+		
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/pages/aula4/emprestimo3.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>proximo</from-outcome>
+			<to-view-id>/pages/aula4/emprestimo4.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>anterior</from-outcome>
+			<to-view-id>/pages/aula4/emprestimo2.xhtml</to-view-id>
+		</navigation-case>		
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/pages/aula4/emprestimo4.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>proximo</from-outcome>
+			<to-view-id>/pages/aula4/emprestimo5.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>anterior</from-outcome>
+			<to-view-id>/pages/aula4/emprestimo3.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/pages/aula4/emprestimo5.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>anterior</from-outcome>
+			<to-view-id>/pages/aula4/emprestimo4.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>inicio</from-outcome>
+			<to-view-id>/pages/aula4/emprestimo1.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/pages/aula5/pessoaExclusao.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>CANCELAR</from-outcome>
+			<to-view-id>/pages/index.xhtml</to-view-id>
+		</navigation-case>
+		
+	</navigation-rule>	
+	
+	<navigation-rule>
+		<from-view-id>/pages/aula5/emprestimo1.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>proximo</from-outcome>
+			<to-view-id>/pages/aula5/emprestimo2.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/pages/aula5/emprestimo2.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>proximo</from-outcome>
+			<to-view-id>/pages/aula5/emprestimo3.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>anterior</from-outcome>
+			<to-view-id>/pages/aula5/emprestimo1.xhtml</to-view-id>
+		</navigation-case>	
+		
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/pages/aula5/emprestimo3.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>proximo</from-outcome>
+			<to-view-id>/pages/aula5/emprestimo4.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>anterior</from-outcome>
+			<to-view-id>/pages/aula5/emprestimo2.xhtml</to-view-id>
+		</navigation-case>		
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/pages/aula5/emprestimo4.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>proximo</from-outcome>
+			<to-view-id>/pages/aula5/emprestimo5.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>anterior</from-outcome>
+			<to-view-id>/pages/aula5/emprestimo3.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	<navigation-rule>
+		<from-view-id>/pages/aula5/emprestimo5.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>anterior</from-outcome>
+			<to-view-id>/pages/aula5/emprestimo4.xhtml</to-view-id>
+		</navigation-case>
+		<navigation-case>
+			<from-outcome>inicio</from-outcome>
+			<to-view-id>/pages/aula5/emprestimo1.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
+	
+	<navigation-rule>
+		<from-view-id>/pages/aula6/sorteFixa.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>SORTE</from-outcome>
+			<to-view-id>/pages/aula1/sorte.xhtml</to-view-id>
+		</navigation-case>
+		
+	</navigation-rule>	
+	
+	<!-- AO usar o JSF 2, foi utilizado no Bean abaixo a annotation @ManagedProperty
+	<managed-bean>
+		<managed-bean-name>helloELBean</managed-bean-name>
+		<managed-bean-class>mbean.aula5.HelloELBean</managed-bean-class>
+		<managed-bean-scope>request</managed-bean-scope>
+		<managed-property>
+			<property-name>testeBean</property-name>
+			<value>#{testeBean}</value>
+		</managed-property>
+	</managed-bean>
+	 -->
+	
+	<!-- 
+	<converter>
+		<converter-for-class>entity.aula2.Horario</converter-for-class>
+		<converter-class>converter.aula2.HorarioConverter</converter-class>
+	</converter>   
+	<validator>
+		<validator-id>horarioValidator</validator-id>
+		<validator-class>validator.aula2.HorarioValidator</validator-class>
+	</validator> 
+    
+    <managed-bean>
+    	<managed-bean-name>testeBean</managed-bean-name>
+    	<managed-bean-class>mbean.aula1.TesteBean</managed-bean-class>
+    	<managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+     
+    
+    <managed-bean>
+    	<managed-bean-name>calcBean</managed-bean-name>
+    	<managed-bean-class>mbean.aula1.CalcBean</managed-bean-class>
+    	<managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    <managed-bean>
+    	<managed-bean-name>pessoaBean</managed-bean-name>
+    	<managed-bean-class>mbean.aula1.PessoaBean</managed-bean-class>
+    	<managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+
+-->
+</faces-config>
